@@ -75,7 +75,7 @@ app.post('/api/gifts', async (req, res) => {
 
         const newGift = new Gift({ recipientName, occasion, budget, address, suggestion, suggestionImage });
         await newGift.save();
-        res.status(200).json(newGift);
+        res.status(200).json({suggestion, image: suggestionImage});
     } catch (err) {
         res.status(500).json({ error: 'Failed to suggest gift.' });
     }
