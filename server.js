@@ -62,10 +62,18 @@ app.post('/api/users/login', async (req, res) => {
 app.post('/api/gifts', async (req, res) => {
     try {
         const { recipientName, occasion, budget, address } = req.body;
-        const suggestions = ['Perfume', 'Watch', 'Book', 'Gift Card', 'Custom Mug'];
-        const suggestion = suggestions[Math.floor(Math.random() * suggestions.length)];
+        const suggestions = [
+            { name: 'Perfume', image: 'https://unsplash.com/s/photos/chanel-perfume' },
+            { name: 'Watch', image: 'https://www.amazon.in/Smart-Watch-Men-Bluetooth-Smartwatch/dp/B0BMFXNK66' },
+            { name: 'Book', image: 'https://about.proquest.com/en/products-services/Books-in-Print/' },
+            { name: 'Gift Card', image: 'https://www.ngpf.org/blog/question-of-the-day/question-of-the-day-what-is-the-average-value-of-unused-gift-cards-per-person-in-america/' },
+            { name: 'Custom Mug', image: 'https://www.amazon.in/FA6-Personalized-Your-Image-Text/dp/B0CRPZRSP3' }
+        ];
+        const random = suggestions[Math.floor(Math.random() * suggestions.length)];
+        const suggestion = random.name;
+        const suggestionImage = random.image
 
-        const newGift = new Gift({ recipientName, occasion, budget, address, suggestion });
+        const newGift = new Gift({ recipientName, occasion, budget, address, suggestion, suggestionImage });
         await newGift.save();
         res.status(200).json(newGift);
     } catch (err) {
