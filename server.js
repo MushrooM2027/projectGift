@@ -63,11 +63,11 @@ app.post('/api/gifts', async (req, res) => {
     try {
         const { recipientName, occasion, budget, address } = req.body;
         const suggestions = [
-            { name: 'Perfume', image: 'https://unsplash.com/photos/n5-chanel-eau-de-parfum-spray-bottle-potCPE_Cw8A' },
-            { name: 'Watch', image: 'https://unsplash.com/photos/watch-at-1034-TJrkkhdB39E' },
-            { name: 'Book', image: 'https://unsplash.com/photos/open-book-on-top-of-several-stacked-books-9DaOYUYnOls' },
-            { name: 'Gift Card', image: 'https://unsplash.com/photos/a-gift-card-with-a-bow-on-top-of-it-yVe7R67_UXM' },
-            { name: 'Custom Mug', image: 'https://unsplash.com/photos/a-close-up-of-a-cup-on-a-table-UL1VqX8rM5w' }
+            { name: 'Perfume', image: 'https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+            { name: 'Watch', image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+            { name: 'Book', image: 'https://images.unsplash.com/photo-1543002588-bfa74002ed7e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+            { name: 'Gift Card', image: 'https://images.unsplash.com/photo-1549116917-bccf55924737?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' },
+            { name: 'Custom Mug', image: 'https://images.unsplash.com/photo-1711854475634-59d52ba677f0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }
         ];
         const random = suggestions[Math.floor(Math.random() * suggestions.length)];
         const suggestion = random.name;
