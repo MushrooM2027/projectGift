@@ -63,11 +63,11 @@ app.post('/api/gifts', async (req, res) => {
     try {
         const { recipientName, occasion, budget, address } = req.body;
         const suggestions = [
-            { name: 'Perfume', image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=500&q=80' },
-            { name: 'Watch', image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=500&q=80' },
-            { name: 'Book', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80' },
-            { name: 'Gift Card', image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80' },
-            { name: 'Custom Mug', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80' }
+            { name: 'Perfume', image: 'https://unsplash.com/photos/n5-chanel-eau-de-parfum-spray-bottle-potCPE_Cw8A' },
+            { name: 'Watch', image: 'https://unsplash.com/photos/watch-at-1034-TJrkkhdB39E' },
+            { name: 'Book', image: 'https://unsplash.com/photos/open-book-on-top-of-several-stacked-books-9DaOYUYnOls' },
+            { name: 'Gift Card', image: 'https://unsplash.com/photos/a-gift-card-with-a-bow-on-top-of-it-yVe7R67_UXM' },
+            { name: 'Custom Mug', image: 'https://unsplash.com/photos/a-close-up-of-a-cup-on-a-table-UL1VqX8rM5w' }
         ];
         const random = suggestions[Math.floor(Math.random() * suggestions.length)];
         const suggestion = random.name;
