@@ -63,11 +63,11 @@ app.post('/api/gifts', async (req, res) => {
     try {
         const { recipientName, occasion, budget, address } = req.body;
         const suggestions = [
-            { name: 'Perfume', image: 'https://unsplash.com/s/photos/chanel-perfume' },
-            { name: 'Watch', image: 'https://www.amazon.in/Smart-Watch-Men-Bluetooth-Smartwatch/dp/B0BMFXNK66' },
-            { name: 'Book', image: 'https://about.proquest.com/en/products-services/Books-in-Print/' },
-            { name: 'Gift Card', image: 'https://www.ngpf.org/blog/question-of-the-day/question-of-the-day-what-is-the-average-value-of-unused-gift-cards-per-person-in-america/' },
-            { name: 'Custom Mug', image: 'https://www.amazon.in/FA6-Personalized-Your-Image-Text/dp/B0CRPZRSP3' }
+            { name: 'Perfume', image: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?auto=format&fit=crop&w=500&q=80' },
+            { name: 'Watch', image: 'https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=500&q=80' },
+            { name: 'Book', image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=500&q=80' },
+            { name: 'Gift Card', image: 'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=500&q=80' },
+            { name: 'Custom Mug', image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80' }
         ];
         const random = suggestions[Math.floor(Math.random() * suggestions.length)];
         const suggestion = random.name;
@@ -75,7 +75,7 @@ app.post('/api/gifts', async (req, res) => {
 
         const newGift = new Gift({ recipientName, occasion, budget, address, suggestion, suggestionImage });
         await newGift.save();
-        res.status(200).json({suggestion, image: suggestionImage});
+        res.status(200).json({ suggestion, image: suggestionImage });
     } catch (err) {
         res.status(500).json({ error: 'Failed to suggest gift.' });
     }
